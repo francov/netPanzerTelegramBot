@@ -1,0 +1,20 @@
+{
+  "name": "netpanzertelegrambot",
+  "version": "1.0.0",
+  "description": "Check Online Netpanzer Players",
+  "main": "check_online_players.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "netpanzer",
+    "telegram",
+    "bot"
+  ],
+  "author": "Francesco Valente <francesco83.valente@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "telegraf": "^3.20.0"
+  }
+}
