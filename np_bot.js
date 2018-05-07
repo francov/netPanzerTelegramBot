@@ -29,13 +29,15 @@ const checkOnlinePlayers = async () => {
     res.data.map(gameserver => {
       if (typeof gameserver.error === 'undefined' && parseInt(gameserver.numplayers) > 0) {
         let num = parseInt(gameserver.numplayers)
+        let players = []
         gameserver.players.map(p => {
-          newPlayers.push(p.player)
+          players.push(p.player)
         })
-        message += `${num} ${num == 1 ? 'player' : 'players'} online (${newPlayers.join(', ')})  on server "${
+        message += `${num} ${num == 1 ? 'player' : 'players'} online (${players.join(', ')})  on server "${
           gameserver.hostname
         }"!\n`
         peopleIn = 1
+        newPlayers = newPlayers.concat(players)
       }
     })
     newPlayers.sort()
@@ -43,8 +45,6 @@ const checkOnlinePlayers = async () => {
       notify = 1
     }
     allPlayers = newPlayers
-    console.log('PLAYERS: ', allPlayers.join('_'))
-    console.log('NOTIFY: ', notify)
     if (notify) {
       await telegram.sendMessage(TELEGRAM_CHAT_ID, message)
     }
