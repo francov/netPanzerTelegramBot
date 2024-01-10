@@ -2,7 +2,7 @@ NetPanzer Telegram Bot
 ======================
 
 Script that checks the netpanzer server-browser for online players and
-send notigfications on a Telegram Channel via a Telegram Bot
+sends notifications on a Telegram Channel via a Telegram Bot
 
 Prerequisites
 =============
@@ -39,5 +39,5 @@ Usage:
 ```
 
 You can change POLLING_INTERVAL value in the script in milliseconds
-to change the interval the checks are done.
+to change the interval of the checks that are done.
 
